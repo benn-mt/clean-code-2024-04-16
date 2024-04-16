@@ -8,8 +8,12 @@ class Chance{
     }
 
     not(){
-        return this;
+        return new Chance(1.0 - this._likelihood);
     }
 }
 
-module.exports = {Chance}
+const FIFTY_FIFTY = new Chance(0.5);
+const CERTAIN = new Chance(1.0);
+const IMPOSSIBLE = new Chance(0.0);
+
+module.exports = {Chance, FIFTY_FIFTY, CERTAIN, IMPOSSIBLE}
