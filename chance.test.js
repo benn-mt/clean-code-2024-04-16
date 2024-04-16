@@ -7,4 +7,8 @@ describe ('Chance objects....', () => {
         expect(new Chance(0.3).equals(new Chance(0.7))).toBe(false);
         expect(new Chance(0.7).equals(new Chance(0.3))).toBe(false);
     });
+
+    test('can be inverted', () => {
+        expect(new Chance(0.5).not().equals(new Chance(0.5))).toBe(true);
+    })
 });
