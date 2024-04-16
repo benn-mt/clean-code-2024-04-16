@@ -10,6 +10,10 @@ class Chance{
     not(){
         return new Chance(1.0 - this._likelihood);
     }
+
+    and(other){
+        return this;
+    }
 }
 
 const FIFTY_FIFTY = new Chance(0.5);

@@ -17,4 +17,8 @@ describe ('Chance objects....', () => {
         expect(new Chance(0.6).not().equals(new Chance(0.4))).toBe(true);
         expect(new Chance(0.4).not().equals(new Chance(0.6))).toBe(true);
     })
+
+    test('can be combined with and()', () => {
+        expect(CERTAIN.and(CERTAIN).equals(CERTAIN));
+    })
 });
