@@ -1,10 +1,12 @@
+const THRESHOLD = 0.0000001;
+
 class Chance{
     constructor(likelihood){
         this._likelihood = likelihood;
     }
 
     equals(other){
-        return this._likelihood == other._likelihood;
+        return Math.abs(this._likelihood - other._likelihood) < THRESHOLD;
     }
 
     not(){
