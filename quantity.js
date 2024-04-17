@@ -10,7 +10,4 @@ class Quantity{
     }
 }
 
-const TEASPOON = new Object();
-const TABLESPOON = new Object();
-
-module.exports = {Quantity, TEASPOON, TABLESPOON}
+module.exports = {Quantity}

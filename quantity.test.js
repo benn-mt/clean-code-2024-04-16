@@ -1,4 +1,5 @@
-const {Quantity, TEASPOON, TABLESPOON} = require("./quantity");
+const {Quantity} = require("./quantity");
+const {TEASPOON, TABLESPOON} = require("./unit");
 
 describe ('Measurements....', () => {
     test('can be compared for equality', () => {
