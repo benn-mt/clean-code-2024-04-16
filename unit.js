@@ -15,6 +15,10 @@ class Unit{
     amountInBaseUnit(amount){
         return amount * this._ratioToBaseUnit;
     }
+
+    isCompatibleWith(other){
+        return this == other;
+    }
 }
 
 module.exports = {Unit}
