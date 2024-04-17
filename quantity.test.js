@@ -1,5 +1,5 @@
 const {Quantity} = require("./quantity");
-const {TEASPOON, TABLESPOON, OUNCE} = require("./unit");
+const {TEASPOON, TABLESPOON, OUNCE, CUP} = require("./unit");
 
 describe ('Measurements....', () => {
     test('can be compared for equality', () => {
@@ -14,5 +14,6 @@ describe ('Measurements....', () => {
     test('Board conversions', () => {
         expect(new Quantity(1, TABLESPOON).equals(new Quantity(3, TEASPOON))).toBe(true);
         expect(new Quantity(1, OUNCE).equals(new Quantity(2, TABLESPOON))).toBe(true);
+        expect(new Quantity(1, CUP).equals(new Quantity(8, OUNCE))).toBe(true);
     });
 });
