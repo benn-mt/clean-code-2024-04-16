@@ -1,6 +1,10 @@
 class Quantity{
+    constructor(amount, unit){
+        this._amount = amount;
+    }
+
     equals(other){
-        return true;
+        return this._amount == other._amount;
     }
 }
 
