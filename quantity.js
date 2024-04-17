@@ -5,8 +5,8 @@ class Quantity{
     }
 
     equals(other){
-        return this._amount == other._amount
-        && this._unit == other._unit;
+        return this._unit.convertToBaseUnitAmount(this._amount) == 
+                other._unit.convertToBaseUnitAmount(other._amount);
     }
 }
 

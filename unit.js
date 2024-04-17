@@ -9,6 +9,6 @@ class Unit{
 }
 
 const TEASPOON = new Unit();
-const TABLESPOON = new Unit();
+const TABLESPOON = new Unit(3);
 
 module.exports = {Unit, TEASPOON, TABLESPOON}
