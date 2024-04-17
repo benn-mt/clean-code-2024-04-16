@@ -1,5 +1,5 @@
 const {Quantity} = require("./quantity");
-const {TEASPOON, TABLESPOON, OUNCE, CUP, PINT, QUART} = require("./volumes");
+const {TEASPOON, TABLESPOON, OUNCE, CUP, PINT, QUART, GALLON} = require("./volumes");
 
 describe ('Measurements....', () => {
     test('can be compared for equality', () => {
@@ -17,5 +17,6 @@ describe ('Measurements....', () => {
         expect(CUP.s(1).equals(OUNCE.s(8))).toBe(true);
         expect(PINT.s(1).equals(CUP.s(2))).toBe(true);
         expect(QUART.s(1).equals(PINT.s(2))).toBe(true);
+        expect(GALLON.s(1).equals(QUART.s(4))).toBe(true);
     });
 });
