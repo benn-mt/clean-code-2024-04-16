@@ -5,8 +5,9 @@ class Quantity{
     }
 
     equals(other){
-        return this._unit.amountInBaseUnit(this._amount) == 
-                other._unit.amountInBaseUnit(other._amount);
+        return this._unit.isCompatibleWith(other._unit) &&
+               this._unit.amountInBaseUnit(this._amount) == 
+                    other._unit.amountInBaseUnit(other._amount);
     }
 }
 

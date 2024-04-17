@@ -10,5 +10,10 @@ describe ('Units', () => {
         expect(new Unit().isCompatibleWith(new Unit())).toBe(false);
         const baseUnit1 = new Unit();
         expect(baseUnit1.isCompatibleWith(baseUnit1)).toBe(true);
+        const subUnit1 = new Unit(5, baseUnit1);
+        expect(baseUnit1.isCompatibleWith(subUnit1)).toBe(true);
+        expect(subUnit1.isCompatibleWith(baseUnit1)).toBe(true);
+        expect(subUnit1.isCompatibleWith(new Unit())).toBe(false);
+        expect(new Unit().isCompatibleWith(subUnit1)).toBe(false);
     })
 });

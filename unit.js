@@ -1,10 +1,13 @@
 const {Quantity} = require("./quantity");
 
 class Unit{
-    constructor(ratioToBaseUnit = 1, baseUnit){
-        this._ratioToBaseUnit = ratioToBaseUnit 
-        if (baseUnit) {
-            this._ratioToBaseUnit = this._ratioToBaseUnit * baseUnit._ratioToBaseUnit;
+    constructor(ratioToRelativeUnit = 1, relativeUnit){
+        if (relativeUnit) {
+            this._baseUnit = relativeUnit._baseUnit;
+            this._ratioToBaseUnit = ratioToRelativeUnit * relativeUnit._ratioToBaseUnit;
+        } else {
+            this._baseUnit = this;
+            this._ratioToBaseUnit = ratioToRelativeUnit 
         }
     }
 
@@ -17,7 +20,7 @@ class Unit{
     }
 
     isCompatibleWith(other){
-        return this == other;
+        return this._baseUnit === other._baseUnit;
     }
 }
 
