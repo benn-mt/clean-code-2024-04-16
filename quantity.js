@@ -10,7 +10,8 @@ class Quantity{
     }
 
     add(other){
-        return new Quantity(this._amount + other._amount, this._unit);
+        return new Quantity(this._unit.amountInBaseUnit(this._amount) +
+        other._unit.amountInBaseUnit(other._amount), this._unit._baseUnit);
     }
 
     _amountsInBaseUnitAreEqual(other) {
