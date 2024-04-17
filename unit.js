@@ -3,7 +3,7 @@ class Unit{
         this._ratioToBaseUnit = ratioToBaseUnit;
     }
 
-    convertToBaseUnitAmount(amount){
+    amountInBaseUnit(amount){
         return amount * this._ratioToBaseUnit;
     }
 }
