@@ -13,4 +13,9 @@ describe ('Measurements....', () => {
 
         expect(new Quantity(2, OUNCE).equals(new Quantity(1, FOOT))).toBe(false);
     });
+
+    test('Compatible quantities can be added together', () => {
+        expect(new Quantity(1, TEASPOON).add(new Quantity(0, TEASPOON)).equals(new Quantity(1, TEASPOON))).toBe(true);
+        expect(new Quantity(1, TEASPOON).add(new Quantity(1, TEASPOON)).equals(new Quantity(2, TEASPOON))).toBe(true);
+    })
 });
