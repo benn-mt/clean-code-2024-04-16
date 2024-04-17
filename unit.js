@@ -10,5 +10,6 @@ class Unit{
 
 const TEASPOON = new Unit();
 const TABLESPOON = new Unit(3);
+const OUNCE = new Unit(3*2)
 
-module.exports = {Unit, TEASPOON, TABLESPOON}
+module.exports = {Unit, TEASPOON, TABLESPOON, OUNCE}
