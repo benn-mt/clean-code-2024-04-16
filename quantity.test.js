@@ -1,5 +1,5 @@
 const {Quantity} = require("./quantity");
-const {TEASPOON, TABLESPOON, OUNCE, CUP} = require("./unit");
+const {TEASPOON, TABLESPOON, OUNCE, CUP, PINT, QUART} = require("./volumes");
 
 describe ('Measurements....', () => {
     test('can be compared for equality', () => {
@@ -12,8 +12,10 @@ describe ('Measurements....', () => {
     });
 
     test('Board conversions', () => {
-        expect(new Quantity(1, TABLESPOON).equals(new Quantity(3, TEASPOON))).toBe(true);
-        expect(new Quantity(1, OUNCE).equals(new Quantity(2, TABLESPOON))).toBe(true);
-        expect(new Quantity(1, CUP).equals(new Quantity(8, OUNCE))).toBe(true);
+        expect(TABLESPOON.s(1).equals(TEASPOON.s(3))).toBe(true);
+        expect(OUNCE.s(1).equals(TABLESPOON.s(2))).toBe(true);
+        expect(CUP.s(1).equals(OUNCE.s(8))).toBe(true);
+        expect(PINT.s(1).equals(CUP.s(2))).toBe(true);
+        expect(QUART.s(1).equals(PINT.s(2))).toBe(true);
     });
 });

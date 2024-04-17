@@ -1,6 +1,15 @@
+const {Quantity} = require("./quantity");
+
 class Unit{
-    constructor(ratioToBaseUnit = 1){
-        this._ratioToBaseUnit = ratioToBaseUnit;
+    constructor(ratioToBaseUnit = 1, baseUnit){
+        this._ratioToBaseUnit = ratioToBaseUnit 
+        if (baseUnit) {
+            this._ratioToBaseUnit = this._ratioToBaseUnit * baseUnit._ratioToBaseUnit;
+        }
+    }
+
+    s(amount){
+        return new Quantity(amount, this);
     }
 
     amountInBaseUnit(amount){
@@ -8,9 +17,4 @@ class Unit{
     }
 }
 
-const TEASPOON = new Unit();
-const TABLESPOON = new Unit(3);
-const OUNCE = new Unit(3*2)
-const CUP = new Unit(3*2*8);
-
-module.exports = {Unit, TEASPOON, TABLESPOON, OUNCE, CUP}
+module.exports = {Unit}
