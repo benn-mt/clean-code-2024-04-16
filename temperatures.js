@@ -1,5 +1,6 @@
-describe("Temperatures...", () =>{
-    test("Can be checked for equality", () => {
-        expect(CELCIUS.s(0).equals(FARENHEIGHT.s(32)));
-    });
-});
+const { Unit } = require("./unit");
+
+const CELCIUS = new Unit();
+const FARENHEIGHT = new Unit(5.0/9.0, CELCIUS, 32)
+
+module.exports = {CELCIUS, FARENHEIGHT}
