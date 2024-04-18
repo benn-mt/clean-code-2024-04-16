@@ -32,6 +32,10 @@ describe ('Units', () => {
         const CELCIUS = new Unit();
         const FARENHEIGHT = new Unit(5.0/9.0, CELCIUS, 32)
         expect(CELCIUS.amountInThisUnit(32, FARENHEIGHT)).toBe(0);
+        expect(FARENHEIGHT.amountInThisUnit(0, CELCIUS)).toBe(32);
+
+        expect(CELCIUS.amountInThisUnit(-40, FARENHEIGHT)).toBe(-40);
+        expect(FARENHEIGHT.amountInThisUnit(-40, CELCIUS)).toBe(-40);
     });
 
     test('can not convert amounts between incompatible units', () => {

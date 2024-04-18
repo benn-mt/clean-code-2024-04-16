@@ -20,7 +20,7 @@ class Unit{
         if (!this.isCompatibleWith(otherUnit)){
             throw new TypeError("Incompatible Units");
         }
-        return (otherAmount - otherUnit._offset) * otherUnit._ratioToBaseUnit / this._ratioToBaseUnit;
+        return (otherAmount - otherUnit._offset) * otherUnit._ratioToBaseUnit / this._ratioToBaseUnit + this._offset;
     }
 
     isCompatibleWith(other){
