@@ -28,6 +28,12 @@ describe ('Units', () => {
         expect(subUnit1.amountInThisUnit(5, subUnit2)).toBe(15);
     });
 
+    test('can convert an amount to another unit amount, with offsets', () => {
+        const CELCIUS = new Unit();
+        const FARENHEIGHT = new Unit(5.0/9.0, CELCIUS, 32)
+        expect(CELCIUS.amountInThisUnit(32, FARENHEIGHT)).toBe(0);
+    });
+
     test('can not convert amounts between incompatible units', () => {
         const baseUnit1 = new Unit();
         const baseUnit2 = new Unit();
