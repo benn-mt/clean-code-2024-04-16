@@ -22,17 +22,18 @@ describe ('Measurements....', () => {
     })
 
     test('Adding incompatible quantities will result in an error', () => {
+        const INCOMPATIBLE_UNIT_ERROR = new TypeError("Incompatible Units");
         expect(() => {
             new Quantity(1, TEASPOON).add(new Quantity(0, INCH))
-        }).toThrow(new TypeError("Incompatible Units"));
+        }).toThrow(INCOMPATIBLE_UNIT_ERROR);
         expect(() => {
             new Quantity(1, INCH).add(new Quantity(0, TEASPOON))
-        }).toThrow(new TypeError("Incompatible Units"));
+        }).toThrow(INCOMPATIBLE_UNIT_ERROR);
         expect(() => {
             new Quantity(2, FOOT).add(new Quantity(3, TABLESPOON))
-        }).toThrow(new TypeError("Incompatible Units"));
+        }).toThrow(INCOMPATIBLE_UNIT_ERROR);
         expect(() => {
             new Quantity(4, INCH).add(new Quantity(5, TABLESPOON))
-        }).toThrow(new TypeError("Incompatible Units"));
+        }).toThrow(INCOMPATIBLE_UNIT_ERROR);
     })
 });
