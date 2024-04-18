@@ -15,10 +15,6 @@ class Unit{
         return new Quantity(amount, this);
     }
 
-    amountInBaseUnit(amount){
-        return amount * this._ratioToBaseUnit;
-    }
-
     amountInThisUnit(otherAmount, otherUnit){
         if (!this.isCompatibleWith(otherUnit)){
             throw new TypeError("Incompatible Units");
