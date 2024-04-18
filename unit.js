@@ -20,6 +20,9 @@ class Unit{
     }
 
     amountInThisUnit(otherAmount, otherUnit){
+        if (!this.isCompatibleWith(otherUnit)){
+            throw new TypeError("Incompatible Units");
+        }
         return otherAmount * otherUnit._ratioToBaseUnit / this._ratioToBaseUnit;
     }
 

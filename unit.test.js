@@ -32,4 +32,12 @@ describe ('Units', () => {
         expect(subUnit2.amountInThisUnit(15, subUnit1)).toBe(5);
         expect(subUnit1.amountInThisUnit(5, subUnit2)).toBe(15);
     });
+
+    test('can not convert amounts between incompatible units', () => {
+        const baseUnit1 = new Unit();
+        const baseUnit2 = new Unit();
+        expect(() => {
+            baseUnit1.amountInThisUnit(2, baseUnit2)
+        }).toThrow(new TypeError("Incompatible Units"));
+    });
 });
