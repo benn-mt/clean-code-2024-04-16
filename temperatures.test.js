@@ -12,4 +12,8 @@ describe("Temperatures...", () =>{
         expect(FAHRENHEIT.s(50).equals(CELCIUS.s(10))).toBe(true);
         expect(FAHRENHEIT.s(-40).equals(CELCIUS.s(-40))).toBe(true);
     });
+
+    test("Should not be able to add temperatures", () => {
+        expect(() => CELCIUS.s(0).add(CELCIUS.s(0))).toThrow(Error("CELCIUS.s(...).add is not a function"));
+    })
 });

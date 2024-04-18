@@ -1,4 +1,5 @@
-const {Quantity} = require("./quantity");
+const {RatioQuantity} = require("./ratio_quantity");
+const {IntervalQuantity} = require("./interval_quantity");
 
 class Unit{
     constructor(ratioToRelativeUnit = 1, relativeUnit, offset = 0){
@@ -10,10 +11,6 @@ class Unit{
             this._ratioToBaseUnit = ratioToRelativeUnit 
         }
         this._offset = offset;
-    }
-
-    s(amount){
-        return new Quantity(amount, this);
     }
 
     amountInThisUnit(otherAmount, otherUnit){
@@ -28,4 +25,16 @@ class Unit{
     }
 }
 
-module.exports = {Unit}
+class RatioUnit extends Unit{
+    s(amount){
+        return new RatioQuantity(amount, this);
+    }
+}
+
+class IntervalUnit extends Unit{
+    s(amount){
+        return new IntervalQuantity(amount, this);
+    }
+}
+
+module.exports = {Unit, RatioUnit, IntervalUnit}

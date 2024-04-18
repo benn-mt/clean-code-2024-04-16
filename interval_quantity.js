@@ -1,4 +1,4 @@
-class Quantity{
+class IntervalQuantity{
     constructor(amount, unit){
         this._amount = amount;
         this._unit = unit;
@@ -7,11 +7,6 @@ class Quantity{
     equals(other){
         return this._unitsAreCompatible(other) &&
                this._amountsInBaseUnitAreEqual(other);
-    }
-
-    add(other){
-        let totalAmount = this._amount + this._unit.amountInThisUnit(other._amount, other._unit)
-        return new Quantity(totalAmount, this._unit);
     }
 
     _amountsInBaseUnitAreEqual(other) {
@@ -24,4 +19,4 @@ class Quantity{
     }
 }
 
-module.exports = {Quantity}
+module.exports = {IntervalQuantity}

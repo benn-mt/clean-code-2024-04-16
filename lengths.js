@@ -1,9 +1,9 @@
-const { Unit } = require("./unit");
+const { RatioUnit } = require("./unit");
 
-const INCH = new Unit();
-const FOOT = new Unit(12, INCH);
-const YARD = new Unit(3, FOOT);
-const FURLONG = new Unit(220, YARD);
-const MILE = new Unit(8, FURLONG);
+const INCH = new RatioUnit();
+const FOOT = new RatioUnit(12, INCH);
+const YARD = new RatioUnit(3, FOOT);
+const FURLONG = new RatioUnit(220, YARD);
+const MILE = new RatioUnit(8, FURLONG);
 
 module.exports = {INCH, FOOT, YARD, FURLONG, MILE}
