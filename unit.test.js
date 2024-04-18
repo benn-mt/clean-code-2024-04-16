@@ -19,9 +19,10 @@ describe ('Units', () => {
 
     test('can convert an amount to another unit amount', () => {
         const baseUnit1 = new Unit();
-        expect(baseUnit1.amountInThisUnit(2, baseUnit1)).toBe(2)
+        expect(baseUnit1.amountInThisUnit(2, baseUnit1)).toBe(2);
         const subUnit1 = new Unit(5, baseUnit1);
-        expect(baseUnit1.amountInThisUnit(5, subUnit1)).toBe(1)
-        //expect(new Unit(3).amountInBaseUnit(4)).toBe(12)
+        expect(baseUnit1.amountInThisUnit(5, subUnit1)).toBe(1);
+        expect(baseUnit1.amountInThisUnit(15, subUnit1)).toBe(3);
+        expect(subUnit1.amountInThisUnit(3, baseUnit1)).toBe(15);
     });
 });

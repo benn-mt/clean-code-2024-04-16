@@ -20,7 +20,7 @@ class Unit{
     }
 
     amountInThisUnit(otherAmount, otherUnit){
-        return otherAmount / otherUnit._ratioToBaseUnit;
+        return otherAmount / otherUnit._ratioToBaseUnit * this._ratioToBaseUnit;
     }
 
     isCompatibleWith(other){
