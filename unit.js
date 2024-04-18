@@ -19,6 +19,10 @@ class Unit{
         return amount * this._ratioToBaseUnit;
     }
 
+    amountInThisUnit(otherAmount, otherUnit){
+        return otherAmount / otherUnit._ratioToBaseUnit;
+    }
+
     isCompatibleWith(other){
         return this._baseUnit === other._baseUnit;
     }

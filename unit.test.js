@@ -16,4 +16,12 @@ describe ('Units', () => {
         expect(subUnit1.isCompatibleWith(new Unit())).toBe(false);
         expect(new Unit().isCompatibleWith(subUnit1)).toBe(false);
     })
+
+    test('can convert an amount to another unit amount', () => {
+        const baseUnit1 = new Unit();
+        expect(baseUnit1.amountInThisUnit(2, baseUnit1)).toBe(2)
+        const subUnit1 = new Unit(5, baseUnit1);
+        expect(baseUnit1.amountInThisUnit(5, subUnit1)).toBe(1)
+        //expect(new Unit(3).amountInBaseUnit(4)).toBe(12)
+    });
 });
