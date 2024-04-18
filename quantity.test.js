@@ -20,4 +20,10 @@ describe ('Measurements....', () => {
         expect(new Quantity(2, TEASPOON).add(new Quantity(1, TEASPOON)).equals(new Quantity(1, TABLESPOON))).toBe(true);
         expect(new Quantity(1, OUNCE).add(new Quantity(1, TABLESPOON)).equals(new Quantity(9, TEASPOON))).toBe(true);
     })
+
+    test('Adding incompatible quantities will result in an error', () => {
+        expect(() => {
+            new Quantity(1, TEASPOON).add(new Quantity(0, INCH))
+        }).toThrow(new TypeError("Incompatible Units"));
+    })
 });
