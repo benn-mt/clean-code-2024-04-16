@@ -25,5 +25,14 @@ describe ('Measurements....', () => {
         expect(() => {
             new Quantity(1, TEASPOON).add(new Quantity(0, INCH))
         }).toThrow(new TypeError("Incompatible Units"));
+        expect(() => {
+            new Quantity(1, INCH).add(new Quantity(0, TEASPOON))
+        }).toThrow(new TypeError("Incompatible Units"));
+        expect(() => {
+            new Quantity(2, FOOT).add(new Quantity(3, TABLESPOON))
+        }).toThrow(new TypeError("Incompatible Units"));
+        expect(() => {
+            new Quantity(4, INCH).add(new Quantity(5, TABLESPOON))
+        }).toThrow(new TypeError("Incompatible Units"));
     })
 });
