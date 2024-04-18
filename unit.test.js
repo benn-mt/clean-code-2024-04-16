@@ -21,8 +21,15 @@ describe ('Units', () => {
         const baseUnit1 = new Unit();
         expect(baseUnit1.amountInThisUnit(2, baseUnit1)).toBe(2);
         const subUnit1 = new Unit(5, baseUnit1);
-        expect(baseUnit1.amountInThisUnit(5, subUnit1)).toBe(1);
-        expect(baseUnit1.amountInThisUnit(15, subUnit1)).toBe(3);
-        expect(subUnit1.amountInThisUnit(3, baseUnit1)).toBe(15);
+        expect(baseUnit1.amountInThisUnit(1, subUnit1)).toBe(5);
+        expect(baseUnit1.amountInThisUnit(3, subUnit1)).toBe(15);
+        expect(subUnit1.amountInThisUnit(15, baseUnit1)).toBe(3);
+        const subUnit2 = new Unit(3, subUnit1);
+        expect(baseUnit1.amountInThisUnit(1, subUnit2)).toBe(15);
+        expect(subUnit2.amountInThisUnit(15, baseUnit1)).toBe(1);
+        expect(subUnit2.amountInThisUnit(3, subUnit1)).toBe(1);
+        expect(subUnit1.amountInThisUnit(1, subUnit2)).toBe(3);
+        expect(subUnit2.amountInThisUnit(15, subUnit1)).toBe(5);
+        expect(subUnit1.amountInThisUnit(5, subUnit2)).toBe(15);
     });
 });
