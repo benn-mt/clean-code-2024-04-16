@@ -10,8 +10,8 @@ class Quantity{
     }
 
     add(other){
-        return new Quantity(this._amount +
-            this._unit.amountInThisUnit(other._amount, other._unit), this._unit);
+        let totalAmount = this._amount + this._unit.amountInThisUnit(other._amount, other._unit)
+        return new Quantity(totalAmount, this._unit);
     }
 
     _amountsInBaseUnitAreEqual(other) {
